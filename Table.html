@@ -1,16 +1,96 @@
-<<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <table>
-      <tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/table.css">
+  <title>fillTable</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr class="t-head">
         <th>Name</th>
         <th>Age</th>
         <th>Gender</th>
       </tr>
-    </table>
-  </body>
+    </thead>
+    <tbody id="t-body">
+
+    </tbody>
+  </table>
+  <script>
+    var myArray = [
+    {
+      "name": "Ryan Schuman",
+      "age": 5,
+      "gender": "Male"
+    },
+    {
+      "name": "Mona Reese",
+      "age": 34,
+      "gender": "Female"
+    },
+    {
+      "name": "Tyler Lawson",
+      "age": 14,
+      "gender": "Male"
+    },
+    {
+      "name": "Tess Mallin",
+      "age": 25,
+      "gender": "Female"
+    },
+    {
+      "name": "Jerry Parkinson",
+      "age": 50,
+      "gender": "Male"
+    },
+    {
+      "name": "Shirley Walters",
+      "age": 31,
+      "gender": "Female"
+    },
+    {
+      "name": "Nina Joseph",
+      "age": 17,
+      "gender": "Female"
+    },
+    {
+      "name": "Vera Daniel",
+      "age": 45,
+      "gender": "Female"
+    },
+    {
+      "name": "Simon Osborne",
+      "age": 32,
+      "gender": "Male"
+    },
+    {
+      "name": "Avery Hawkins",
+      "age": 10,
+      "gender": "Male"
+    },
+    {
+      "name": "Marvin Collins",
+      "age": 22,
+      "gender": "Male"
+    }
+  ]
+  fillTable(myArray)
+    function fillTable(data){
+      var table=document.getElementById('t-body')
+
+      for(var i=0; i< data.length; i++){
+        var row= `<tr>
+          <td>${data[i].name}</td>
+          <td>${data[i].age}</td> 
+          <td>${data[i].gender}</td>
+          </tr>`
+                 table.innerHTML += row
+      }
+    }
+  </script>
+</body>
 </html>
